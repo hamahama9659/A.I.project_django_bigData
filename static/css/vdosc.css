@@ -1,0 +1,140 @@
+#header {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+#footer {
+    width: 100%;
+    height: 10rem;
+    color: #fff; !important;
+    margin-top: auto;
+    padding-top : 1.2rem;
+}
+
+.upload-box {
+    height: 15rem;
+    margin-top: 2em;
+    margin-bottom: -1rem;
+    background: white;
+}
+
+.float-right {
+    justify-content: flex-end;
+}
+
+
+.upd {
+
+    background: white;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    padding-bottom: 2rem;
+    margin-bottom: -2rem;
+    border-bottom-left-radius: 2ch;
+    border-bottom-right-radius: 2ch;
+    border-top-left-radius: 2ch;
+    border-top-right-radius: 2ch;
+}
+
+.row-box {
+    background: white;
+    margin-top: -1rem;
+    margin-bottom: -1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top-left-radius: 2ch;
+    border-top-right-radius: 2ch;
+}
+.rowcirclebox {
+    background: white;
+    margin-top: -3rem;
+    margin-bottom: -3rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.col-bt {
+    width: 33.333333%;
+}
+
+.list-title h1{
+    padding-left: 1.5rem;
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: linear-gradient(#609ce2, #6085e2 60%, #4d71cc);
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+.page-header h1, .page-header{
+    padding: 1.5rem 0;
+    font-size: 3rem;
+    font-weight: 900;
+    background: linear-gradient(#609ce2, #6085e2 60%, #4d71cc);
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+.nav-tabs .nav-link:link {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    font-weight: 650;
+    text-transform: uppercase;
+    background: linear-gradient(#609ce2, #6085e2 60%, #4d71cc) !important;
+    -webkit-background-clip: text !important;
+    color: transparent !important;
+}
+.nav-tabs .nav-link:hover {
+    background: linear-gradient(#156a9b, #146594 60%, #115b86) !important;
+    -webkit-background-clip: text !important;
+    color: transparent !important;
+}
+.nav-tabs .nav-link.active {
+    background: linear-gradient(#084e77, #012d48) !important;
+    -webkit-background-clip: text !important;
+    color: transparent !important;
+}
+
+
+.tab-pane {
+    padding: 3rem;
+    background-color: #fff;
+    margin-top: 1rem;
+    border-radius: 1rem;
+}
+
+.tab-pane h2 {
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+.tab-pane h5 {
+    padding-left: 1rem;
+    font-size: 1.5rem;
+    padding-top: 0.5rem;
+    color: #777777;
+}
+.tab-pane h6 {
+    padding-left: 1rem;
+    font-size: 1.1rem;
+    color: #777777;
+    padding-top: 0.5rem;
+    font-weight: 500;
+}
+.tab-pane strong {
+    font-size: 2rem;
+    font-weight: 550;
+}
+.tab-pane p {
+    padding-left: 1rem;
+    font-size: 1.25rem;
+    line-height: 2.5rem;
+}
+
+.references {
+    padding-left: 1rem;
+    font-size: 1rem;
+}
+
+.mt-6 {margin-top: 5rem !important;}
+.mb-6 {margin-bottom: 5rem !important;}
+.my-6 {margin-top: 5rem !important; margin-bottom: 5rem !important;}

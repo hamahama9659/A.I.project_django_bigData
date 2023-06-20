@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VDOSC 메인화면</title>
+    <link rel="stylesheet" href="{% static 'css/main_page.css'%}"/>
+</head>
+<body>
+    <div id="loading" class="item-gif">
+        <img src="{% static 'img/circle3.gif' %}"/>
+    </div>
+    <div class="item-text">
+        <h1>VDOSC</h1>
+        <p>Vulnerability Detect<br>of Source Code</p>
+        <button class="btn-info" type="submit" onclick="location.href='{% url 'detect:index' %}'">접 속</button>
+    </div>
+</body>
+</html>

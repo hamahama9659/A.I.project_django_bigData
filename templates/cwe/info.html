@@ -1,0 +1,254 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Information {% endblock %}
+
+<!-- import css, js -->
+{% block extra-style %}
+
+{% endblock %}
+
+<!-- body content -->
+{% block content %}
+    <!-- container -->
+    <div class="container">
+        <div class="bs-docs-section">
+            <div class="row mb-5">
+                <div class="col-lg-12">
+                    <div class="page-header">
+                        <h1>Information</h1>
+                    </div>
+                    <div class="bs-component">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item">
+                                <a class="nav-link active" data-bs-toggle="tab" href="#cwe">CWE</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#cwe119">CWE-119</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#cwe120">CWE-120</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#cwe469">CWE-469</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#cwe476">CWE-476</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-bs-toggle="tab" href="#cweother">CWE-<span style="text-transform: lowercase">other</span></a>
+                            </li>
+                        </ul>
+                        <div id="myTabContent" class="tab-content">
+                            <div class="tab-pane fade active show" id="cwe">
+                                <h2>CWE 란?</h2>
+                                <h5><b> : C</b>ommon <b>W</b>eakness <b>E</b>numeration</h5>
+                                <hr class="mt-3 mb-6"/>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="bs-component">
+                                            <p>
+                                                <strong>CWE</strong><b>는 Common Weakness Enumeration</b>의 약자로, 소프트웨어 및 하드웨어 취약점 유형 목록입니다.
+                                                <br/>
+                                                나열된 단어 자체만 본다면 ‘일반적인 결함의 나열’ 이라고 볼 수 있습니다.
+                                                <br/>
+                                                그리고 공통 언어, 보안 도구의 측정 막대, 취약점 식별, 완화 및 예방 노력의 기준선 역할을 합니다.
+                                            </p>
+                                            <br/>
+                                            <p>
+                                                CWE를 이용하면 정적 분석의 한 부분인 실행시간 오류 <b>( Runtime Error )</b>를 검출할 수 있습니다.
+                                                <br/>
+                                                즉, 프로그램을 실행시키지 않고 분석하면서 오동작을 일으킬 수 있는 코드를 검출 할 수 있게 됩니다.
+                                            </p>
+                                            <hr class="mt-6 mb-3"/>
+
+                                            <div class="references">
+                                                <div class="row">
+                                                    <span class="col-lg-1"><b>참고자료 : </b></span>
+                                                    <span class="col-lg-10"><a href="https://cwe.mitre.org/">https://cwe.mitre.org/</a></span>
+                                                </div>
+                                                <div class="row">
+                                                    <span class="col-lg-1"></span>
+                                                    <span class="col-lg-10"><a href="https://moasoftware.co.kr/sw-testing/cwe-common-weakness-enumeration-%EB%9E%80/">https://moasoftware.co.kr/sw-testing/cwe-common-weakness-enumeration-%EB%9E%80/</a></span>
+                                                </div>
+                                            </div>
+                                            <hr class="my-3"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="cwe119">
+                                <h2>CWE-119</h2>
+                                <h5>Improper Restriction of Operations within the Bounds of a Memory Buffer</h5>
+                                <h6>: 메모리 버퍼 범위 내에서 작업에 대한 부적절한 제한</h6>
+                                <hr class="mt-3 mb-6"/>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="bs-component">
+                                            <div class="col-lg-9">
+                                            <p>
+                                                <strong>CWE-119</strong><b>는 버퍼 오버플로우(buffer overflow) 메모리 손상 취약점</b>이다.
+                                            </p>
+                                            <p>
+                                                메모리 버퍼의 한계 내에서 이뤄지는 운영에 제대로 된 제한을 걸지 못해서 생기는 오류라고 한다.
+                                                <br/>
+                                                이 오류를 활성화시킬 경우 메모리를 읽거나 쓰는 여러 행위들이 데이터 구조나 내부 프로그램 데이터와 연결된 메모리 영역에서 의도치 않게 발생하게 된다.
+                                                공격자가 이를 활용해 함수 포인터를 악성 코드로 리 다이렉션 하여 악성 코드를 실행하거나, 제어 흐름을 변경하고, 민감한 데이터를 열람할 수 있게 된다.
+                                            </p>
+                                            </div>
+
+                                            <hr class="mt-6 mb-3"/>
+
+                                            <div class="references">
+                                                <div class="row">
+                                                    <span class="col-lg-1"></span>
+                                                    <span class="col-lg-10"><a href="https://cwe.mitre.org/data/definitions/119.html">https://cwe.mitre.org/data/definitions/119.html</a></span>
+                                                </div>
+                                                <div class="row">
+                                                    <span class="col-lg-1"><b>참고자료 : </b></span>
+                                                    <span class="col-lg-10"><a href="http://www.wins21.co.kr/mobile/blog/blog_view.html?t=31&num=1458">http://www.wins21.co.kr/mobile/blog/blog_view.html?t=31&num=1458</a></span>
+                                                </div>
+                                            </div>
+                                            <hr class="my-3"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="cwe120">
+                                <h2>CWE-120</h2>
+                                <h5>Buffer Copy without Checking Size of Input</h5>
+                                <h6>: 'Classic Buffer Overflow', 입력 크기를 확인하지 않고 버퍼 복사</h6>
+                                <hr class="mt-3 mb-6"/>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="bs-component">
+                                            <div class="col-lg-10">
+                                            <p>
+                                                <strong>CWE-120</strong><b>은 </b>프로그램이 보유할 수 있는 것보다 더 많은 데이터를 버퍼에 넣으려고 하거나 프로그램이 버퍼 경계 외부의 메모리 영역에 데이터를 넣으려고 할 때 존재합니다.
+                                            </p>
+                                            <p>
+                                                가장 단순한 유형의 오류이자 버퍼 오버플로의 가장 일반적인 원인은 프로그램이 복사되는 양을 제한하지 않고 버퍼를 복사하는 "고전적인" 경우입니다.
+                                                다른 변종도 존재하지만 고전적인 오버플로의 존재는 프로그래머가 가장 기본적인 보안 보호조차 고려하지 않는다는 것을 강력하게 시사합니다.
+                                            </p>
+                                            </div>
+
+                                            <hr class="mt-6 mb-3"/>
+
+                                            <div class="references">
+                                                <div class="row">
+                                                    <span class="col-lg-1"><b>참고자료 : </b></span>
+                                                    <span class="col-lg-10"><a href="https://cwe.mitre.org/data/definitions/120.html">https://cwe.mitre.org/data/definitions/120.html</a></span>
+                                                </div>
+                                            </div>
+                                            <hr class="my-3"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="cwe469">
+                                <h2>CWE-469</h2>
+                                <h5>Use of Pointer Subtraction to Determine Size</h5>
+                                <h6>: 크기 결정을 위한 포인터 감산 사용</h6>
+                                <hr class="mt-3 mb-6"/>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="bs-component">
+                                            <div class="col-lg-10">
+                                            <p>
+                                                <strong>CWE-469</strong><b>는 </b>취약한 프로그램의 권한으로 임의의 코드가 실행될 가능성이 있습니다.
+                                            </p>
+                                            <p>
+                                                응용 프로그램은 크기를 결정하기 위해 다른 포인터에서 하나의 포인터를 감산합니다. 그러나 포인터가 동일한 메모리에 존재하지 않는 경우 해당 작동이 올바르지 않을 수 있습니다.
+                                            </p>
+                                            </div>
+
+                                            <hr class="mt-6 mb-3"/>
+
+                                            <div class="references">
+                                                <div class="row">
+                                                    <span class="col-lg-1"><b>참고자료 : </b></span>
+                                                    <span class="col-lg-10"><a href="https://cwe.mitre.org/data/definitions/469.html">https://cwe.mitre.org/data/definitions/469.html</a></span>
+                                                </div>
+                                            </div>
+                                            <hr class="my-3"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="cwe476">
+                                <h2>CWE-476</h2>
+                                <h5>NULL Pointer Dereference</h5>
+                                <h6>: null 포인터 역참조</h6>
+                                <hr class="mt-3 mb-6"/>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="bs-component">
+                                            <div class="col-lg-10">
+                                            <p>
+                                                <strong>CWE-476</strong><b>은 </b>응용 프로그램이 유효할 것으로 예상하지만 NULL인 포인터를 역참조할 때 발생하며 일반적으로 충돌 또는 종료를 유발합니다.
+                                            </p>
+                                            <p>
+                                                이 문제는 경쟁 조건 및 간단한 프로그래밍 누락을 비롯한 여러 결함을 통해 발생할 수 있습니다.
+                                                테스트 단계에서 감지를 피할 가능성이 가장 높기 때문에 드물게 발생하는 오류 조건으로 인해 자주 발생합니다.
+                                                <br/>
+                                                (여기서 취약점은 보안 관련 취약점을 더 쉽게 도입하거나 탐지하기 어렵게 만들 수 있는 품질 문제입니다.)
+                                            </p>
+                                            </div>
+
+                                            <hr class="mt-6 mb-3"/>
+
+                                            <div class="references">
+                                                <div class="row">
+                                                    <span class="col-lg-1"><b>참고자료 : </b></span>
+                                                    <span class="col-lg-10"><a href="https://cwe.mitre.org/data/definitions/476.html">https://cwe.mitre.org/data/definitions/476.html</a></span>
+                                                </div>
+                                            </div>
+                                            <hr class="my-3"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="cweother">
+                                <h2>CWE-other</h2>
+                                <h6>: 다른 모든 종류의 CWE 취약점</h6>
+                                <hr class="mt-3 mb-6"/>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="bs-component">
+                                            <div class="col-lg-10">
+                                            <p>
+                                                <strong>CWE</strong><b> 취약점에 </b>대하여 더 많은 정보를 원하시는 분은,
+                                                <br/>   아래 참고자료를 이용해주시기 바랍니다.
+                                            </p>
+                                            </div>
+
+                                            <hr class="mt-6 mb-3"/>
+
+                                            <div class="references">
+                                                <div class="row">
+                                                    <span class="col-lg-1"><b>참고자료 : </b></span>
+                                                    <span class="col-lg-10"><a href="https://cwe.mitre.org/index.html">https://cwe.mitre.org/index.html</a></span>
+                                                </div>
+                                            </div>
+                                            <hr class="my-3"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+<!-- extra-script in body -->
+{% block extra-script %}
+
+{% endblock %}
+
+
+
+
+

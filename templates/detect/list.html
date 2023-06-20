@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} SourceCode {% endblock %}
+
+
+{% block extra-style %}
+{% endblock %}
+
+
+{% block content %}
+    <!-- container -->
+    <div class="container">
+        <div class="row">
+
+        </div>
+        <div class="row">
+            <div class="col-lg-10">
+                <div class="list-title">
+                    <h1>VDOSC</h1>
+              </div>
+            </div>
+            <!-- file upload -->
+            <div class="col-lg-2">
+                <div class="bs-component">
+                    <label for="formFile" class="form-label mt-4"></label>
+                    <div class="input-group mb-3 float-right">
+                        <button type="button" id="myBtn" class="btn btn-info btn-lg"><b>소스코드 검증</b></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- modal -->
+        <div id="myModal" class="modal">
+
+            <div class="modal-content p-5">
+                <!--
+                <button class="btn-close" id="closeModal"></button>
+                -->
+                <div class="container">
+
+                    <!-- file upload -->
+                    <div class="row pt-3">
+                        <div class="col-lg-12 upd">
+                            <div class="bs-component">
+                                <form enctype="multipart/form-data" method="POST" action="">
+                                {% csrf_token %}
+                                    <label for="formFile" class="form-label mt-4">Select file to upload.</label>
+                                    <div class="input-group mb-3">
+                                        <input type="file" class="form-control" id="fileupload" placeholder="Select file">
+                                        <input type="submit" value="Upload" id="submit-file" class="btn btn-success">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- uploading progress-bar -->
+                    <div class="row pb-5">
+                        <div class="col-lg-12 upd" id="progress-upload">
+                            <div id="uploaded_files" class="form-group mb-3"></div>
+                        </div>
+                    </div>
+                    <!-- end file upload -->
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="bs-component">
+                                <label for="formFile" class="form-label mt-4"></label>
+                                <div class="input-group mb-3">
+                                    <div class="col-bt">
+                                        <button type="button" class="btn btn-primary btn-lg" id="detecting" disabled hidden><b>소스코드 분석</b></button>
+                                    </div>
+                                    <div class="col-bt"></div>
+                                    <div class="col-bt">
+                                        <div class="input-group mb-3 float-right">
+                                            <button class="btn btn-warning btn-lg" id="closeModal"><b>닫기</b></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- end container -->
+            </div>
+        </div>
+        <!--end modal -->
+
+
+        <!-- grid -->
+        <div class="example-wrapper mb-5">
+            <div id="myGrid" class="ag-theme-alpine"></div>
+            <div class="row"><div class="col-lg-4 mb-5"></div></div>
+        </div>
+        <!-- end grid -->
+
+    </div>
+    <!-- end container -->
+{% endblock %}
+
+{% block extra-script %}
+
+    <script type="text/javascript">
+        // list data from 'detect:views.listpage'
+        let vulInfo = JSON.parse("{{ vuls_js | escapejs }}");
+    </script>
+
+    <!-- AG-gird -->
+    <script>var __basePath = './';</script>
+    <script src="https://unpkg.com/@ag-grid-community/all-modules@26.1.0/dist/ag-grid-community.min.js"></script>
+    <script src="{% static 'js/main1.js' %}"></script>
+
+    <!-- AJAX file upload -->
+    <script src="{% static 'js/uploading.js' %}"></script>
+
+    <!-- Modal popup -->
+    <script src="{% static 'js/modal.js' %}"></script>
+
+    <!-- Detect vulnerability -->
+    <script src="{% static 'js/detect.js' %}"></script>
+
+{% endblock %}

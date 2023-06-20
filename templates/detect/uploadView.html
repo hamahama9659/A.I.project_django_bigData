@@ -1,0 +1,171 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>SourceCode</title>
+      <meta charSet="UTF-8"/>
+
+        <!--import css-->
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" href="{% static 'css/bootstrap.css'%}"/>
+        <link rel="stylesheet" href="{% static 'css/vdosc.css' %}"/>
+        <link rel="stylesheet" href="{% static 'css/ag-grid.css' %}"/>
+        <link rel="stylesheet" href="{% static 'css/progresscircle.css' %}">
+
+        <!-- jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+   </head>
+   <body>
+
+    <!-- nav-bar -->
+    <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand">SourceCode</a>
+      </div>
+    </div>
+
+    <!-- container -->
+    <div class="container">
+        <!-- file upload -->
+        <div class="upload-box">
+            <div class="row pt-5">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4">
+                    <div class="bs-component">
+                        <form enctype="multipart/form-data" method="POST" action="">
+                        {% csrf_token %}
+                            <label for="formFile" class="form-label mt-4">Select file to upload.</label>
+                            <div class="input-group mb-3">
+                                <input type="file" class="form-control" id="fileupload" placeholder="Select file">
+                                <input type="submit" value="Upload" id="submit-file" class="btn btn-success">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+
+            <!-- uploading progress-bar -->
+            <div class="row pb-5">
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4" id="progress-upload">
+                    <div id="uploaded_files" class="form-group mb-3"></div>
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+        </div>
+        <!-- end file upload -->
+
+        <hr>
+
+        <!-- detail for file -->
+        <div class="row py-3">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-2"><h3>filename</h3></div>
+            <div class="col-lg-4" id="filename"></div>
+            <div class="col-lg-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-2"><h3>regdate</h3></div>
+            <div class="col-lg-4" id="regdate"></div>
+            <div class="col-lg-4"></div>
+        </div>
+        <div class="row py-3">
+            <div class="col-lg-2"></div>
+            <div class="col-lg-2"><h3>total time</h3></div>
+            <div class="col-lg-2" id="operatetime"></div>
+            <div class="col-lg-1"> ~ </div>
+            <div class="col-lg-2" id="endtime"></div>
+            <div class="col-lg-3"></div>
+        </div>
+
+        <hr>
+
+        <!-- result data -->
+        <div class="row" id="chart-box-in">
+        <div class="row my-5 pb-3" id="chart-box">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-2 mb-5">
+                <figure class="text-center">
+                    <blockquote class="blockquote">
+                        <h3>CWE-119</h3>
+                    </blockquote>
+                    <div class="circlechart" id="cwe119" data-percentage=""></div>
+                </figure>
+            </div>
+            <div class="col-lg-2 mb-5">
+                <figure class="text-center">
+                    <blockquote class="blockquote">
+                        <h3>CWE-120</h3>
+                    </blockquote>
+                    <div class="circlechart" id="cwe120" data-percentage=""></div>
+                </figure>
+            </div>
+            <div class="col-lg-2 mb-5">
+                <figure class="text-center">
+                    <blockquote class="blockquote">
+                        <h3>CWE-469</h3>
+                    </blockquote>
+                    <div class="circlechart" id="cwe469" data-percentage=""></div>
+                </figure>
+            </div>
+            <div class="col-lg-2 mb-5">
+                <figure class="text-center">
+                    <blockquote class="blockquote">
+                        <h3>CWE-476</h3>
+                    </blockquote>
+                    <div class="circlechart" id="cwe476" data-percentage=""></div>
+                </figure>
+            </div>
+            <div class="col-lg-2 mb-5">
+                <figure class="text-center">
+                    <blockquote class="blockquote">
+                        <h3>CWE-OTHER</h3>
+                    </blockquote>
+                    <div class="circlechart" id="cweother" data-percentage=""></div>
+                </figure>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+        </div>
+    </div>
+    <!-- end container -->
+
+
+
+
+    <!-- footer -->
+    <footer id="footer" class="navbar-dark bg-primary">
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-12 py-3">
+                <ul class="list-unstyled">
+                  <li class="float-end"><a href="#top">Back to top</a></li>
+                </ul>
+                <p>Made by SAVE</p>
+                <p>Code released under the MIT License</p>
+              </div>
+            </div>
+        </div>
+    </footer>
+    <!-- end footer -->
+
+
+
+    <!-- percentage chart script -->
+    <script src="{% static 'js/progresscircle.js' %}"></script>
+    <script type="text/javascript">
+        // 퍼센트(%) 차트 실행
+        var chartss = null;
+        $('.circlechart').circlechart();
+    </script>
+
+   <!-- file upload script -->
+    <script src="{% static 'js/app.js' %}"></script>
+
+
+  </body>
+</html>

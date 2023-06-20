@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <title>loading...</title>
+
+    <style>
+        body {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loading">
+        <img src="{% static 'img/cube.gif' %}"/>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            setTimeout(function () {
+                if (window.location == 'http://127.0.0.1:8000/detect/') {
+                    window.location.href = '{% url 'detect:listpage' %}';
+                }
+            }, 1500)
+        })
+    </script>
+</body>
+</html>
